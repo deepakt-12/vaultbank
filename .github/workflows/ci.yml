@@ -1,0 +1,47 @@
+name: VaultBank CI Pipeline
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  test-and-build:
+    name: Build, Lint & Automated Tests
+    runs-on: ubuntu-latest
+
+    services:
+      mongodb:
+        image: mongo:7.0
+        ports:
+          - 27017:27017
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Monorepo Dependencies
+        run: npm ci
+
+      - name: Build Shared Types and Schemas
+        run: npm run build --workspace=@vaultbank/shared
+
+      - name: Run Server Automated Tests (Vitest & In-Memory Mongo)
+        run: npm run test --workspace=@vaultbank/server
+        env:
+          NODE_ENV: test
+          SESSION_SECRET: ci-secret-must-be-min-32-chars-long-1234567890
+          CSRF_SECRET: ci-csrf-secret-1234567890abcdef
+
+      - name: Build Backend (TypeScript compilation)
+        run: npm run build --workspace=@vaultbank/server
+
+      - name: Build Frontend SPA (Vite & Tailwind)
+        run: npm run build --workspace=@vaultbank/client

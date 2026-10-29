@@ -1,0 +1,30 @@
+{
+  "name": "vaultbank",
+  "version": "1.0.0",
+  "private": true,
+  "description": "VaultBank - Secure Full-Stack MERN Banking Platform",
+  "workspaces": [
+    "shared",
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=server",
+    "dev:client": "npm run dev --workspace=client",
+    "build": "npm run build --workspaces",
+    "test": "npm run test --workspaces",
+    "test:server": "npm run test --workspace=server",
+    "test:client": "npm run test --workspace=client",
+    "seed": "npm run seed --workspace=server"
+  },
+  "keywords": [
+    "fintech",
+    "banking",
+    "mern",
+    "double-entry",
+    "security"
+  ],
+  "author": "VaultBank Engineering Team",
+  "license": "ISC"
+}
+
