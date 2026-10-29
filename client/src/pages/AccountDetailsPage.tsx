@@ -275,3 +275,4 @@ export function AccountDetailsPage() {
     </div>
   );
 }
+

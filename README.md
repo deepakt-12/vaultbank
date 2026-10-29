@@ -282,3 +282,4 @@ All mutating requests require `Content-Type: application/json` and `X-VaultBank-
 1. **Simulated Money Only**: No connection to real-world ACH, Fedwire, SEPA, or SWIFT clearing networks.
 2. **Single-Currency Ledger**: The default deployment operates in USD. While schema supports multi-currency codes, cross-currency automated FX foreign exchange pricing curves are not integrated.
 3. **In-Memory Testing Replica Set**: Vitest tests execute against an in-memory MongoDB runner. For production high-availability, MongoDB Atlas or a 3-node replica set cluster is required.
+

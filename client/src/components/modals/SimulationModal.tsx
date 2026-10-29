@@ -199,3 +199,4 @@ export function SimulationModal({ isOpen, onClose, accounts, defaultAccountId }:
     </Dialog>
   );
 }
+

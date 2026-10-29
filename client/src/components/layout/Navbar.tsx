@@ -174,3 +174,4 @@ export function Navbar({ onMobileMenuToggle }: { onMobileMenuToggle?: () => void
     </header>
   );
 }
+

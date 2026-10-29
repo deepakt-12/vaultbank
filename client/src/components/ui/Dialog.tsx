@@ -59,3 +59,4 @@ export function Dialog({ isOpen, onClose, title, description, children, classNam
     </div>
   );
 }
+

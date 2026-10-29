@@ -45,3 +45,4 @@ jobs:
 
       - name: Build Frontend SPA (Vite & Tailwind)
         run: npm run build --workspace=@vaultbank/client
+

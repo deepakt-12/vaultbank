@@ -119,3 +119,4 @@ export function Sidebar({ onClose }: { onClose?: () => void }) {
     </aside>
   );
 }
+

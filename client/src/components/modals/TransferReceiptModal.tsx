@@ -131,3 +131,4 @@ export function TransferReceiptModal({ isOpen, onClose, receipt }: TransferRecei
     </Dialog>
   );
 }
+

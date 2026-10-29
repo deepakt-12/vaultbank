@@ -166,3 +166,4 @@ export function MfaSetupModal({ isOpen, onClose, onSuccess }: MfaSetupModalProps
     </Dialog>
   );
 }
+
